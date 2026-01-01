@@ -1,14 +1,7 @@
-num_1 = int(input("Enter your number1 "))
-num_2 = int(input("Enter your number2 "))
+try:
+    with open("sample.txt", "rt") as file: 
+       for i,line in enumerate(file, start=1): 
+            print(f"line{i} = {line.strip()}") 
 
-add = num_1 + num_2
-sub = num_1 - num_2
-mul = num_1 * num_2
-div = num_1 / num_2
-
-print("The values entered are: ", num_1 , "and" , num_2)
-
-print("Additiojn value: ", add)
-print("Subtraction value: ", sub)
-print("Multiplicaton value: ", mul)
-print("Division value: ", div)
+except FileNotFoundError:
+    print("The file doesnot exists!")
